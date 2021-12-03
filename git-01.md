@@ -17,7 +17,7 @@
     - ls : 폴더의 파일 목록들을 보여줌
     - ls -a : 숨김 파일까지 포함하여 전부 보여줌
     - mkdir AA : AA라는 폴더 생성
-    - rm -r AA : AA라는 폴더 삭제
+    - rm -r AA : AA라는 폴더 삭제 
     - 
 
   - 파일
@@ -30,7 +30,7 @@
     - 삭제 (영구삭제)
 
       - rm aaa.txt : aaa.txt파일 삭제
-      - rm *.txt : txt형식의 파일 전부 삭제
+      - rm *.txt : txt형식의 파일을 전부 삭제
       - rm .hidden.txt : 숨겨진 hidden.txt파일 삭제
 
     - 이동
