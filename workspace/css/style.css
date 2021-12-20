@@ -1,0 +1,53 @@
+body{
+    border: 3px dashed blue;
+}
+
+/*
+ 글자와 관련된 속성
+ 스타일도 상속이 가능한 속성이 있음
+ 글자는 상속이 가능한 속성 
+ 부모 태그에서 자식 태그로 상속이 가능
+ 부모 태그에 속성을 지정한 경우 자식 태그들도 동일한 스타일이 적용
+*/
+
+/*
+html{
+    font-size: 20px;
+    font-family: '함초롱바탕', '굴림체', 'serif', 'sans-serif';
+    line-height: 2;
+    color: #006400; (글자색은 폰트컬러가 아니라 그냥 컬러)
+    background-color: black; (배경색)
+}
+*/
+
+h2 {
+   color: red;
+   }
+
+   /* sample5번에서 21번줄 보면, id의 속성값은 columns1 으로 정의되어 있음 */
+#column1{
+    color: yellowgreen;
+}
+
+.footer{
+    color: blueviolet;
+}
+
+/*div의 하위 태그 중 h2만 선택*/
+div h2 {
+    color: blue;
+}
+
+/*하위가 아닌 자식으로 표현한다면
+모든 하위태그가 아닌 직계만 적용 됨
+*/
+#column1 > h2{
+    color: yellow;
+}
+
+.column3 {
+    border: 5px solid blue;
+    margin: 50px; /*top, bottom, left, right 모두 동일한 margin 설정가능*/
+
+    padding: 50px;
+}

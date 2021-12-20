@@ -1,0 +1,33 @@
+/*블록기반의 태그들을. li들을 인라인형태로 바꿔줌*/
+
+.title {
+    display: inline;
+}
+
+.list{
+    display: inline;
+    position: absolute;
+    left: 500px;
+    bottom: 15px;
+}
+
+.list-item{ 
+    display: inline;
+}
+
+.container{
+    border:1px dashed blue;
+    position: relative; /* 이렇게 하면 컨테이너를 벗어나지 않음*/
+}
+.span{
+    /* position: static (static은 디폴트값이라 별 변화 없을 것)*/
+    /* position: relative;
+    top: -20px;
+    left: 40px; */
+    position: absolute;
+    top: 30px;
+    left:180px;
+    /*left:0px; left가 0이면 컨테이너 시작지점인데, 잘 보면 컨테이너를 벗어나있음
+                그래서 컨테이너의 포지션을 변경하면,...(?)*/
+}
+/* 컨테이너를 기준으로 정함? */
