@@ -1,1 +1,1 @@
-console.log('하이');
+console.log('Hello Javascript');
