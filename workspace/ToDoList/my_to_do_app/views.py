@@ -13,7 +13,7 @@ def index( request ):
   # DB의 내용을 브라우저에 전달하기 위한 코드를 추가
   todos = Todo.objects.all() # 테이블 내의 모든 내용을 조회
   content = {'todos':todos}
-  return render( request, 'my_to_do_app/index.html', content)
+  return render( request, 'my_to_do_app/index.html', content) 
 
 def createTodo( request):
   # URL과 view가 잘 연결되었는지 확인하기 위해서 아래와 같은 코드 이용
