@@ -7,5 +7,6 @@ from . import views
 # 그 다음은 어디로 가지? 는 이 밑에서 설정
 # profile 이후의 경로를 지정해주는 곳
 urlpatterns = [
-    path( 'login/', views.login), # => 127.0.0.1:8000/board/login
+    #path('', views.login), 
+    path( 'login/', views.login), # => 127.0.0.1:8000/profile/login
 ]

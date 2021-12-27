@@ -15,6 +15,6 @@ urlpatterns = [
     # 127.0.0.1:8000/board
     
     
-    path( 'write/', views.write) # => 127.0.0.1:8000/board/login
+    path( 'write/', views.write) # => 127.0.0.1:8000/board/write
 
 ]
