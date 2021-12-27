@@ -8,9 +8,13 @@ from . import views
 # board 이후의 경로를 지정해주는 곳
 urlpatterns = [
     path('', views.index),
-    path('list/', views.list ), # 127.0.0.1:8000/board
     # '' 는 board까지 썼을 때 화면은 얘가 담당해준다는 뜻
     # views의 index()를 호출
+    # path('list/', views.list ), #board를 쳤을 때 리스트가 나오게 하는 경우가 아니라,
+    # board/list를 쳐야 list가 나오게 할 경우
+    # 127.0.0.1:8000/board
+    
+    
     path( 'write/', views.write) # => 127.0.0.1:8000/board/login
 
 ]

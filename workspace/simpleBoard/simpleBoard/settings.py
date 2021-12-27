@@ -120,6 +120,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [ # static파일에 담긴 디렉토리를 따로 지정?
+    BASE_DIR / 'static', # 베이스 디렉토리는 위에 16번줄에 설정되어 있음
+    # BASE_DIR 는 프로젝트 폴더가 됨.
+    # 프로젝트 폴더 하위에 static 폴더를 만들어 줘야함
+    # /프로젝트폴더/static/
+    # static에 임폴트하고 싶은 css파일을 넣어줌
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
