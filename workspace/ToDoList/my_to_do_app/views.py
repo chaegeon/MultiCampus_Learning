@@ -30,5 +30,5 @@ def createTodo( request):
   # models.py에서 정의된 클래스를 이용해서 전달받은 갑을 DB에 저장한다
   new_todo = Todo( content = user_input_str )
   new_todo.save ()
-    # 투두객체를 생성할 떄 콘텐트를 보내면 해당 객체를 저장
+    # todo객체를 생성할 떄 콘텐트를 보내면 해당 객체를 저장
   return HttpResponseRedirect(reverse('index'))

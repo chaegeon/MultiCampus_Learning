@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <!-- bootstrap css 적용-->
+        <link type='text/css' rel='stylesheet' href='../css/bootstrap.min.css' />
+        <link type='text/css' rel='stylesheet' href='../css/bootstrap-theme.min.css' />
+        <link type='text/css' rel='stylesheet' href='../css/login.css' />    
+    </head>
+
+    <body>
+        <div class='container'>
+        <!-- 아이디랑 전달해야 되니까 폼은 있어야지-->
+        <!-- 부트스트랩- 폼- 수평폼-->
+            <form  class='form-horizontal' method='post' action=''>
+                <div class='form-group'>
+                    <label for='inputId' class='col-xs-4 col-md-4 control-label'>ID</label>
+                    <div class='col-xs-4 col-md-4'>
+                        <input class='form-control' type='text' name='id' id='inputId'>
+                    </div>    
+                </div> <!-- 폼그룹으로 지정했더니 한줄에 id,pw입력창 뜨던게 줄바꿔서 뜸-->
+                
+                <div class='form-group'>
+                    <label for='inputPw' class='col-xs-4 col-md-4 control-label'>PW</label>
+                    <div class='col-xs-4 col-md-4'>
+                        <input class='form-control' type='password' name='pw' id='inputPw'>
+                    </div>
+                </div>
+                
+                <div class='form-group'>
+                    <div class='col-xs-offset-4 col-md-offset-4 col-md-10 col-xs-10'>
+                        <button class ='btn btn-default' type='submit'>로그인</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
