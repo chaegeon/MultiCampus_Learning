@@ -32,3 +32,9 @@ def createTodo( request):
   new_todo.save ()
     # todo객체를 생성할 떄 콘텐트를 보내면 해당 객체를 저장
   return HttpResponseRedirect(reverse('index'))
+
+def deleteTodo( request ):
+  #print( '요청변수:', request.GET['todoNum'])
+  todo = Todo.objects.get(id= request.GET['todoNum'])
+  todo.delete()
+  return HttpResponseRedirect(reverse('index'))

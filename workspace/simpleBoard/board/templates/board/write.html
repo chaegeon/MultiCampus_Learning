@@ -1,35 +1,59 @@
 <!DOCTYPE html>
-<html >
-<head>
-    
-    </head>
+<html>
+  <head>
+    {% load static %}
+    <link type='text/css' rel='stylesheet' href='{% static "bootstrap.min.css" %}' />
+    <link type='text/css' rel='stylesheet' href='{% static "bootstrap-theme.min.css" %}' />
+    <link type='text/css' rel='stylesheet' href='{% static "list.css" %}' />
 
-    <body>
-        <div class='container'>
-          <form>
-            <div class='row'>
-              <!-- 날짜 -->
-              <div class="col-md-4">
-                <input type='date' class='col-md-4'>
-              </div>
-    
-            </div>
-    
-            <div class='row'>
-              <!-- 작성자 -->
-              <div class="col-md-4">
-                <input type='text' class='col-md-4'>
-              </div>
-            </div>
-    
-            <div class='row'>
-              <!-- 게시글 -->
-              <div class="col-md-8">
-                <textarea class="form-control" rows="20"></textarea>
-              </div>
-            </div>
-            </form>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">아주 간단한 게시판</a>
         </div>
-    </body> 
-    
-    </html>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+            <button type="submit" class="btn btn-info">Sign in</button>
+            <button type="submit" class="btn btn-success">Sign up</button>
+          </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <hr>
+
+    <div class='container'>
+      <form action='../create/' method='POST'>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputPassword1">작성 날짜</label>
+          <input type="date" class="form-control" id='now_date' name='createDate'>
+          <script>
+            document.getElementById('now_date').valueAsDate = new Date();
+          </script>
+
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">작성자</label>
+          <input type="text" class="form-control" placeholder="작성자" name='user'>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">글 제목</label>
+          <input type="text" class="form-control"  name = 'subject'>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">게시글</label>
+          <textarea class="form-control" rows=10 name='content'></textarea>
+        <button type="submit" class="btn btn-default">등록</button>
+      </form>
+    </div>
+  </body>
+
+</html>

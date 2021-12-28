@@ -18,7 +18,7 @@ from django.urls import path, include
 
 # 127.0.0.1:8000 까지만 받고, 그 뒤의 경로를 지정
 urlpatterns = [
-
+    
     path('admin/', admin.site.urls),
     path('board/', include('board.urls')), 
     path('profile/', include('accounts.urls')),

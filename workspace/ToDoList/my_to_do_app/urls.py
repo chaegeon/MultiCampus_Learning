@@ -20,5 +20,7 @@ urlpatterns = [
     # 아까 인덱스함수랑 연결해준 것처럼 createTodo 함수랑 연결해 준것
     # 이제 views.py 가서 createTodo 함수 정의하러
     path('createTodo/', views.createTodo),
+
+    path('deleteTodo/', views.deleteTodo),
 ]
 
