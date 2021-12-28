@@ -37,4 +37,4 @@ def deleteTodo( request ):
   #print( '요청변수:', request.GET['todoNum'])
   todo = Todo.objects.get(id= request.GET['todoNum'])
   todo.delete()
-  return HttpResponseRedirect(reverse('index'))
+  return HttpResponseRedirect(reverse('index')) 
