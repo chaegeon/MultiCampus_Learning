@@ -58,3 +58,27 @@ def create(request):
 
   return HttpResponseRedirect(reverse('list'))
     # 글작성 하고 작성완료 뜬 후 보드 페이지로 돌아가게
+
+def delete( request ):
+  #print(request.POST['id'])
+  b = Board.objects.get(id= request.POST['id'])
+  b.delete()
+  return HttpResponseRedirect(reverse('list')) 
+
+def update( request):
+  #print('id', request.GET['id']) #list에서 id를 보내면 여기서 id를 받아옴
+  
+  #수정하려면 기존 내용을 가져와야 수정하지
+  post = Board.objects.get(id = request.GET['id'])
+  content = {'post': post} # 가져와서 콘텐트에 넣어
+  return render( request, 'board/update.html', content)
+
+def modify(request): # write? create와의 차이점은 객체를 만들지 않아. 기존의 객체를 가져옴
+  post = Board.objects.get(id=request.POST['id'])
+  post.createDate = request.POST['createDate']
+  post.writer = request.POST['user']
+  post.subject = request.POST['subject']
+  post.content = request.POST['content']
+  post.save()
+
+  return HttpResponseRedirect( reverse('list'))

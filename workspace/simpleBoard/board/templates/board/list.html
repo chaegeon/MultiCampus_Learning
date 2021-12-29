@@ -55,10 +55,16 @@
             <td> {{row.writer}} </td>
             <td> {{row.subject}} </td>
             <td>
-              <button type="submit" class="btn btn-warning">수정</button>
+              <a href='update/?id={{row.id}}'> <!--수정하려면 해당 게시글/ URL로 id를 보내줘야되니까-->
+                <button type="submit" class="btn btn-warning">수정</button>
+              </a>
             </td>
-            <td>
-              <button type="submit" class="btn btn-danger">삭제</button>
+            <td> <!--폼을 만들어서 POST로 처리해봄-->
+              <form action='delete/' method='POST'>
+                {% csrf_token %} <!-- 안 적으면 'CSRF verification failed. Request aborted.' 에러 뜸-->
+                <input type='hidden' name=id value={{row.id}}>
+                <button type="submit" class="btn btn-danger">삭제</button>
+              </form>
             </td>
           </tr>
           {% endfor %}

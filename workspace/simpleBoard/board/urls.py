@@ -16,5 +16,8 @@ urlpatterns = [
     
     
     path( 'write/', views.write), # => 127.0.0.1:8000/board/write
-    path( 'create/', views.create)
-]
+    path( 'create/', views.create),
+    path( 'delete/', views.delete),
+    path( 'update/', views.update),
+    path( 'modify/', views.modify)
+]   
