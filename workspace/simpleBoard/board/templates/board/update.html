@@ -4,9 +4,10 @@
       <form action='../modify/' method='POST'>
         {% csrf_token %} <!--이 때 모디파이만 전달하면 안 되지-->
         <input type='hidden' name='id' value={{post.id}}> <!-- id도 같이 전달해야지-->
-        <div class="form-group">"{{post.createDate|date:'Y-m-d'}}">
+        <div class="form-group">
+          
           <label for="exampleInputPassword1">작성 날짜</label>
-          <input type="date" class="form-control" id='now_date' name='createDate' value=
+          <input type="date" class="form-control" id='now_date' name='createDate' value="{{post.createDate|date:'Y-m-d'}}">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">작성자</label>

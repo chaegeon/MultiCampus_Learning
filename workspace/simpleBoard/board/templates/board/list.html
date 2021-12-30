@@ -20,7 +20,7 @@
           <tr>
             <td> {{forloof.counter}}</td> <!--counter 는 탬플릿 태그에서 사용가능-->
             <td> {{row.createDate}}</td>
-            <td> {{row.writer}} </td>
+            <td> {{row.user.username}} </td>
             <td>
               <a href='view/?id={{row.id}}'> <!--제목을 클릭하면 view로 이동하도록 링크 첨부-->
                 {{row.subject}} 

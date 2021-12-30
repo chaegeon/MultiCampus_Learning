@@ -11,15 +11,15 @@
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">작성자</label>
-          <input type="text" class="form-control" placeholder="작성자" name='user' value='post.writer' readonly>
+          <input type="text" class="form-control" placeholder="작성자" name='user' value={{post.writer}} readonly>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">글 제목</label>
-          <input type="text" class="form-control"  name = 'subject' vlaue='post.subject' readonly>
+          <input type="text" class="form-control"  name = 'subject' vlaue="{{post.subject}}" readonly>
         </div>
         <div class="form-group">
           <label for="exampleInputFile">게시글</label>
-          <textarea class="form-control" rows=10 name='content' value='post.content' readonly></textarea>
+          <textarea class="form-control" rows=10 name='content' readonly> {{post.content}} </textarea>
       </form>
     </div>
 {% endblock %}

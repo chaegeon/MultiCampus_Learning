@@ -13,6 +13,11 @@
     <div class='container'>
       <form class='form-horizontal' method='POST' action=''>
         {% csrf_token %}
+        <!--
+          로그인이 되어 있지 않은 경우 next URL로 값을 넘겨 주기 위해서는
+          히든 필드를 통해서 값을 따로 전달해줘야 한다.
+        -->
+        <input type=hidden name='next' value='{{next}}'>
         <div class='form-group'>
           <label for="inputId" class="col-xs-4 col-md-4 control-label">ID</label>
           <div class='col-xs-4 col-md-4'>
