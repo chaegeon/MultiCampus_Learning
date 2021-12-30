@@ -22,5 +22,5 @@ urlpatterns = [
     path( 'modify/', views.modify),
     # 
     path( 'view/', views.view),
-    path( 'login/', views.login),
+    path( 'signup/', views.signup),
 ]   

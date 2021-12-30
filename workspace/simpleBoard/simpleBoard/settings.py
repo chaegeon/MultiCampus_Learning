@@ -132,3 +132,9 @@ STATICFILES_DIRS = [ # static파일에 담긴 디렉토리를 따로 지정?
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#로그인 이후에 이동할 URL
+LOGIN_REDIRECT_URL = '/board/'
+
+# 로그아웃 이후에 이동할 URL을 설정을 통해 지정할 수 있다
+LOGOUT_REDIRECT_URL = '/board/'

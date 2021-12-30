@@ -88,6 +88,6 @@ def view(request):
   content = {'post':post}
   return render(request, 'board/view.html', content)
 
-def view(request):
+def signup(request):
   #user = Board.objects.get()
   print(request)

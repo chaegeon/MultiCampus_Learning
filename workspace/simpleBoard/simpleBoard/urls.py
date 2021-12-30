@@ -21,7 +21,7 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('board/', include('board.urls')), 
-    path('profile/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
     # 세부 경로 설정
     # include('board/urls') : 127.0.0.1:8000/board/?
     # ?부터 세부경로를 담당하는 파일로 이동하라는 의미
