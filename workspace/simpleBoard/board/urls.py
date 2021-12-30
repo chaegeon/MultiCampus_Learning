@@ -19,5 +19,8 @@ urlpatterns = [
     path( 'create/', views.create),
     path( 'delete/', views.delete),
     path( 'update/', views.update),
-    path( 'modify/', views.modify)
+    path( 'modify/', views.modify),
+    # 
+    path( 'view/', views.view),
+    path( 'login/', views.login),
 ]   

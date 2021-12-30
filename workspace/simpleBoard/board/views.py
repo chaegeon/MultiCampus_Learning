@@ -82,3 +82,12 @@ def modify(request): # write? create와의 차이점은 객체를 만들지 않�
   post.save()
 
   return HttpResponseRedirect( reverse('list'))
+
+def view(request):
+  post = Board.objects.get(id=request.GET['id'])
+  content = {'post':post}
+  return render(request, 'board/view.html', content)
+
+def view(request):
+  #user = Board.objects.get()
+  print(request)

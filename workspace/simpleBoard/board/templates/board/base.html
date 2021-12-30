@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    {% load static %}
+    <link type='text/css' rel='stylesheet' href='{% static "bootstrap.min.css" %}' />
+    <link type='text/css' rel='stylesheet' href='{% static "bootstrap-theme.min.css" %}' />
+    <link type='text/css' rel='stylesheet' href='{% static "list.css" %}' />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/board/">아주 간단한 게시판</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+            <a href='login/'>
+                <button type="submit" class="btn btn-info">Sign in</button>
+            </a>
+            <a>
+                <button type="submit" class="btn btn-success">Sign up</button>
+            </a>
+        </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <hr>
+    <!-- 템플릿 태그를 삽입 -->
+    {% block content %}
+    <!-- 템플릿태그 사이에는 개별적으로 표현되는 내용이 들어간다-->
+    {% endblock %} <!-- 탬플릿태그 사이에 이제 들어가는 건데, 이 탬플릿태그는 주석처리 하면 안 됨!-->
+  </body>
+</html>
