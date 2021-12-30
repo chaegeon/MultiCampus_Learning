@@ -67,7 +67,10 @@ def create(request):
 def delete( request ):
   #print(request.POST['id'])
   b = Board.objects.get(id= request.POST['id'])
-  b.delete()
+  if request.user != b.user:
+    return render( request, 'board/alert.html')
+  else: 
+    b.delete()
   return HttpResponseRedirect(reverse('list'))
 
 @login_required(login_url='accounts/signIn/')
@@ -80,7 +83,7 @@ def update( request):
     content = {'post': post} # 가져와서 content에 넣어
     return render( request, 'board/update.html', content)
 
-from django.contrib import messages
+
 @login_required(login_url='accounts/signIn/')
 def modify(request): # write? create와의 차이점은 객체를 만들지 않음. 기존의 객체를 가져옴
   # 해당 게시글의 작성자만이 해당 게시글을 수정할 수 있게끔  
