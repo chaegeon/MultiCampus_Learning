@@ -1,5 +1,5 @@
 from typing import ContextManager
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls.base import reverse
 
@@ -73,20 +73,26 @@ def delete( request ):
 @login_required(login_url='accounts/signIn/')
 def update( request):
   #print('id', request.GET['id']) #list에서 id를 보내면 여기서 id를 받아옴
-  
   #수정하려면 기존 내용을 가져와야 수정가능하기 때문에
-  post = Board.objects.get(id = request.GET['id'])
-  content = {'post': post} # 가져와서 content에 넣어
-  return render( request, 'board/update.html', content)
 
+
+    post = Board.objects.get(id = request.GET['id'])
+    content = {'post': post} # 가져와서 content에 넣어
+    return render( request, 'board/update.html', content)
+
+from django.contrib import messages
 @login_required(login_url='accounts/signIn/')
 def modify(request): # write? create와의 차이점은 객체를 만들지 않음. 기존의 객체를 가져옴
+  # 해당 게시글의 작성자만이 해당 게시글을 수정할 수 있게끔  
   post = Board.objects.get(id=request.POST['id'])
-  post.createDate = request.POST['createDate']
-  post.writer = request.POST['user']
-  post.subject = request.POST['subject']
-  post.content = request.POST['content']
-  post.save()
+  if request.user != post.user:
+    return render( request, 'board/alert.html')
+  else:  
+    post.createDate = request.POST['createDate']
+    post.writer = request.POST['user']
+    post.subject = request.POST['subject']
+    post.content = request.POST['content']
+    post.save()
 
   return HttpResponseRedirect( reverse('list'))
 
