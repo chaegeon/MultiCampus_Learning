@@ -33,7 +33,7 @@ while True:
     
     time.sleep(2) # 다음 스크롤이 생길 때까지 잠시 대기
     
-    #새로 높이를 재고
+    # 새로 높이를 재고
     new_height = browser.execute_script('return document.body.scrollHeight')
     
     # 높이가 이전과 같을 경우 더 이상 내려갈 스크롤이 없으므로 중지
@@ -41,3 +41,10 @@ while True:
     
     # 기존의 높이를 새로운 높이로 변경하고 다음 회차로 반복
     last_height = new_height
+
+# 로드 된 내용을 수집
+# 스크롤을 내리면서 피드를 가져올 수는 없음. 스크롤을 다 내리고 한 번에 가져와야 함
+articles = browser.find_elements(By.CSS_SELECTOR, 'div.feedlist span article') # 피드리스트 스팬의 글들
+for article in articles:
+    for content in article.find_elements(By.CSS_SELECTOR, 'span.feedContentBlk span'): # 얘도 리스트라..
+        print( content.text) # 콘텐트만 뽑아옴
