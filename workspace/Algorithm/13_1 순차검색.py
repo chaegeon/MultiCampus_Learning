@@ -7,7 +7,7 @@ def seqSearch(ary, fData):
         if ary[i] == fData:
             pos = i
             break
-    return pos
+    return pos # 못찾으면 -1
 
 ## 전역
 dataAry = [ random.randint(1, 99) for _ in range(20)]
