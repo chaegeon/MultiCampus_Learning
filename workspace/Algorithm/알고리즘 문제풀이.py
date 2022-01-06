@@ -1,3 +1,6 @@
+## 실제 알고리즘 문제였던 것?
+
+
 ARRAY_LENGTH = 5  # 배열의 행과 열 크기(고정)
 
 def replaceData(numData): # numData	2차원 정수 배열
