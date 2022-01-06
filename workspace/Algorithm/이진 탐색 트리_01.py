@@ -1,5 +1,4 @@
-## 이진탐색트리의 활용
-
+## 구성
 
 ## 함수/클래스
 class TreeNode() :
@@ -44,22 +43,4 @@ for name in nameAry[1:]: # 레드벨벳부터 끝까지
     memory.append(node)
 print('이진 탐색 트리 구성 완료')
 
-# 검색
-findName = '마마무'
-current = root  # 루트부터 검색 시작
-while True:
-    if findName == current.data: # 처음 루트가 findName일 수도 있응게
-        print(findName, '찾음')
-        break
-    elif findName < current.data: # current 보다 작으면 왼쪽
-        if current.left == None:
-            print(findName, '없음')
-            break
-        current = current.left
-    else:
-        if current.right == None:
-            print(findName, '없음')
-            break
-        current = current.right
-
-print('종료')
+        
