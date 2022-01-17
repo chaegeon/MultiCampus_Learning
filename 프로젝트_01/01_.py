@@ -104,3 +104,27 @@ plt.text(20.3 ,16.5,'단위: 명/10만 명', verticalalignment='bottom' , horizo
 
 plt.show() 
 
+
+
+# 테스트
+
+plt.figure(figsize=(20,5))
+n_data = len(Country)
+index = np.arange(len(Country))
+sns.countplot(x = 'Country', data = oecd, order = oecd['Country'].value_counts().index)
+
+plt.ylabel('사망자 비율')
+plt.show()
+
+oecd1 =  oecd.set_index([Country])
+oecd1 = oecd1.drop( columns = ['Country'])
+
+oecd1
+
+plt.figure(figsize=(20,5))
+n_data = len(Country2)
+index = np.arange(len(Country2))
+sns.barplot(Country2,Per2)
+
+plt.ylabel('사망자 비율')
+plt.show()
