@@ -128,3 +128,40 @@ sns.barplot(Country2,Per2)
 
 plt.ylabel('사망자 비율')
 plt.show()
+
+plt.figure(figsize=(20,5))
+n_data = len(Country)
+index = np.arange(len(Country))
+sns.countplot(x = index, data = oecd1)
+
+plt.ylabel('사망자 비율')
+plt.show()
+
+oecd2 = oecd.sort_values('Per',ascending=True)
+oecd2
+
+Country2 = oecd2['Country'].values.tolist()
+Country2
+
+Per2 = oecd2['Per'].values.tolist()
+Per2
+
+Per
+
+plt.barh( average)
+plt.show()
+
+
+fig, ax1 = plt.subplots()
+
+ax1.plot(Country, Per, '-s', color='green', markersize=7, linewidth=5, alpha=0.7, )
+ax1.set_ylim(0, 18)
+ax1.set_xlabel('Country')
+ax1.set_ylabel('Per')
+ax1.tick_params(axis='both', direction='in')
+
+ax2 = ax1.twinx()
+ax2.bar(Counrty, average, color='deeppink', label='Demand', alpha=0.7, width=0.7)
+ax2.set_ylim(0, 18)
+ax2.set_ylabel(r'Demand ($\times10^6$)')
+ax2.tick_params(axis='y', direction='in')
