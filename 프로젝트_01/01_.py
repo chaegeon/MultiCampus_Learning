@@ -108,6 +108,8 @@ plt.show()
 
 # 테스트
 
+
+
 plt.figure(figsize=(20,5))
 n_data = len(Country)
 index = np.arange(len(Country))
@@ -165,3 +167,80 @@ ax2.bar(Counrty, average, color='deeppink', label='Demand', alpha=0.7, width=0.7
 ax2.set_ylim(0, 18)
 ax2.set_ylabel(r'Demand ($\times10^6$)')
 ax2.tick_params(axis='y', direction='in')
+
+fig = plt.figure(figsize=(20,5))
+ax = fig.add_subplot()
+n_data = len(Country)
+index = np.arange(len(Country))
+sns.barplot(Country,Per)
+
+plt.legend()
+plt.ylabel('사망자 비율')
+plt.grid(True, alpha = 0.5, axis = 'y')
+
+for i, b in enumerate(Country):
+    ax.text(b.get_x()+b.get_width()*(1/2),b.get_height()+0.1, \
+            Per[i],ha='center',fontsize=13)
+
+# 평균값을 구한 average 평균선 추가하기
+plt.axhline( y = average, color='r', linewidth = 1 )
+plt.show() 
+
+for i, b in enumerate(bars):
+    ax.text(b.get_x()+b.get_width()*(1/2),b.get_height()+0.1, \
+            num_patient[i],ha='center',fontsize=13)
+
+fig = plt.figure(figsize=(20,5))
+
+x = Country
+y = Per
+bar = sns.barplot(x, y)
+plt.ylim(0,18)
+
+for i in len(index):
+  height = rect.get_height()
+  plt.text(rect.get_x() + rect.get_width() / 2.0, height, '%.1f'% height, ha='center', va = 'bottom', size = 12)
+
+# 평균값을 구한 average 평균선 추가하기
+plt.axhline( y = average, color='r', linewidth = 1 )
+plt.show() 
+
+fig = plt.figure(figsize=(20,5))
+ax = fig.add_subplot()
+n_data = len(Country)
+index = np.arange(len(Country))
+sns.barplot(Country,Per)
+
+plt.legend()
+plt.ylabel('사망자 비율')
+plt.grid(True, alpha = 0.5, axis = 'y')
+
+for rec in bar:
+  height = rect.get_height()
+  plt.text(rect.get_x() + rect.get_width() / 2.0, height, '%.1f'% height, ha='center', va = 'bottom', size = 12)
+
+# 평균값을 구한 average 평균선 추가하기
+plt.axhline( y = average, color='r', linewidth = 1 )
+plt.show() 
+
+fig = plt.figure(figsize=(20,5))
+
+x = Country
+y = Per
+bar = sns.barplot(x, y)
+plt.ylim(0,18)
+
+for i in range( len(Country)):
+  Per_r = Per[i]
+  plt.text( i, 'Per/2', 'Per', va = 'center', ha='center')
+  
+#for i in range(len(Country)):
+  
+  #plt.text(i, 'Per/2', "Per", va='center', ha='center')
+
+# 평균값을 구한 average 평균선 추가하기
+plt.axhline( y = average, color='r', linewidth = 1 )
+plt.show() 
+
+
+
