@@ -1,3 +1,6 @@
+
+- 우리 나라의 `노인 보행자 교통사고 사망자`는 다른 OECD 회원국들과 비교했을 때 어느정도의 수준인지 확인해보자
+- `10만명 당 사망자 수`로 비교해봄
 ### !pip install xmltodict
 
 import pandas as pd
