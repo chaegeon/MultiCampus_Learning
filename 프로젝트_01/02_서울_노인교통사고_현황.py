@@ -59,3 +59,48 @@ accident.dtypes
 accident.info()
 
 accident
+
+
+# 시각화
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#한글화 설정
+from matplotlib import font_manager, rcParams
+!apt-get install fonts-nanum*
+rcParams['font.family'] = 'NanumGothicCoding'
+rcParams['axes.unicode_minus'] = False
+font_manager._rebuild()
+
+rawData = accident.drop(index=[1])
+rawData.head(5)
+
+rawData['지역']
+
+rawData.columns
+
+# '지역' 컬럼의 값들을 리스트로 변환
+region = rawData['지역'].values.tolist()
+region
+
+death = rawData['노인보행자_사망자수'].values.tolist()
+death
+
+injury = rawData['노인보행자_부상자수'].values.tolist()
+injury
+
+# 지역별 부상자
+plt.figure(figsize=(20,5))
+n_data = len(region)
+index = np.arange(len(region))
+plt.bar(region,injury)
+plt.show()
+
+# 지역별 사망자
+plt.figure(figsize=(20,5))
+n_data = len(region)
+index = np.arange(len(region))
+plt.bar(region,death, color='r')
+plt.show()
