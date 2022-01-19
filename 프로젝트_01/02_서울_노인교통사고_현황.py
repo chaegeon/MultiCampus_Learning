@@ -97,7 +97,7 @@ n_data = len(region)
 index = np.arange(len(region))
 plt.bar(region,injury)
 plt.show()
-
+ 
 # 지역별 사망자
 plt.figure(figsize=(20,5))
 n_data = len(region)
