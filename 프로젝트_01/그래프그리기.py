@@ -1,4 +1,8 @@
-# 막대 + 꺾은 선 그래프
+# 막대 + 꺾은 선 그래프 예시
+day = ['Mon', 'Tue','Wed', 'Thu','Fri','Sat','Sun']
+temp = [33, 29, 26, 36, 37, 32, 25]
+num_icecream = [1000, 2000, 1100, 900, 1500, 1550, 2200]
+
 fig = plt.figure(figsize=(8,8)) ## Figure 생성 
 fig.set_facecolor('white') ## Figure 배경색 지정
  
