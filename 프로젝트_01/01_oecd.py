@@ -118,8 +118,7 @@ n_data = len(Country)
 index = np.arange(len(Country))
 plt.bar(Country,Per)
 
-plt.legend()
-plt.ylabel('사망자 비율')
+plt.ylabel('사망자 수')
 plt.grid(True, alpha = 0.5, axis = 'y')
 plt.margins(x=0.01)
 
