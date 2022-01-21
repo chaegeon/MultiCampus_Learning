@@ -104,3 +104,38 @@ n_data = len(region)
 index = np.arange(len(region))
 plt.bar(region,death, color='r')
 plt.show()
+
+# 지역별 부상자 와 지역별 사망자 그래프 합치기
+plt.figure(figsize=(28,5))
+barWidth = 0.5
+plt.bar(index, injury, color='c', width = barWidth, label='부상자')
+plt.bar(index, death, color='r', width = barWidth, label='사망자')
+
+plt.xticks( index, region )
+plt.legend()
+plt.xlabel('지역')
+plt.ylabel('사상자수')
+#plt.title('노인보행사고_사상자수')
+plt.show()
+
+# "부상자, 사망자"로 값을 표시
+plt.figure(figsize=(25,10))
+barWidth = 0.5
+plt.bar(index, injury, color='c', width = barWidth, label='부상자')
+plt.bar(index, death, color='r', width = barWidth, label='사망자')
+plt.grid(True, alpha = 0.5, axis = 'y')
+
+for i in range( len(region)):
+  injury_r = injury[i]
+  death_r = death[i]
+  # plt.text( i+0.3, death[i], injury[i], '%d %/ %d')
+  # plt.text( i-1, injury[i]+2, f'{death[i]}명 사망 / {injury[i]}명 부상')
+  plt.text( i-0.6, injury[i]+2, f'부상{injury[i]},사망{death[i]}')
+
+
+plt.xticks( index, region )
+plt.legend()
+plt.xlabel('지역')
+plt.ylabel('사상자수')
+plt.title('노인보행사고_사상자수')
+plt.show()
