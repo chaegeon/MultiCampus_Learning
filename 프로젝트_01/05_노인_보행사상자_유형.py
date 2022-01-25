@@ -36,3 +36,28 @@ rawData
 
 rawData.columns = [ '65~70세_사망자수', '65~70세_부상자수','65~70세_중상자수', '65~70세_경상자수','65~70세_부상신고자수', '71세이상_사망자수', '71세이상_부상자수','71세이상_중상자수', '71세이상_경상자수','71세이상_부상신고자수' ]
 rawData
+
+rawData = rawData.loc[['2']]
+rawData
+
+rawData = rawData.apply(pd.to_numeric)
+
+rawData.info()
+
+rawData['총사망자수'] = rawData['65~70세_사망자수'] + rawData['71세이상_사망자수']
+rawData
+
+rawData['총중상자수'] = rawData['65~70세_중상자수'] + rawData['71세이상_중상자수']
+rawData
+
+rawData['총경상자수'] = rawData['65~70세_경상자수'] + rawData['71세이상_경상자수']
+rawData
+
+rawData['총부상신고자수'] = rawData['65~70세_부상신고자수'] + rawData['71세이상_부상신고자수']
+rawData
+
+rawData = rawData[['총사망자수', '총중상자수', '총경상자수', '총부상신고자수']]
+rawData
+
+lab = rawData.columns
+lab
