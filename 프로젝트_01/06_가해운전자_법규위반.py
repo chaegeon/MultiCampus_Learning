@@ -123,3 +123,46 @@ rawData
 
 rawData = pd.merge(rawData, rawData7, left_index = True, right_index=True)
 rawData
+
+rawData.columns
+
+rawData.columns = ['0', '과속', '0', '교차로위반', '0', '기타', '0','보행자보호위반','0','부당한회전','0','신호위반','0','안전운전불이행', '0','중앙선침범']
+
+rawData
+
+rawData = rawData.drop(columns=['0'])
+rawData
+
+rawData.index=['사고발생건수', '사망자수', '부상자수']
+rawData
+
+rawData = rawData.T
+rawData
+
+rawData = rawData.sort_values('사고발생건수',ascending=False)
+rawData
+
+rawData = rawData.reset_index()
+rawData
+
+rawData.columns=['위반유형', '사고발생건수', '사망자수', '부상자수']
+rawData
+
+a_type = rawData['위반유형'].values.tolist()
+
+a_type
+
+num = rawData['사고발생건수'].values.tolist()
+num
+
+death = rawData['사망자수'].values.tolist()
+death
+
+injury = rawData['부상자수'].values.tolist()
+injury
+
+accident = rawData.T
+accident
+
+accident.columns = ['안전운전불이행', '신호위반', '중앙선침범', '교차로위반', '기타', '보행자보호위반', '과속', '부당한회전']
+accident
