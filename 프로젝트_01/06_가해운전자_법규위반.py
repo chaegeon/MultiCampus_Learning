@@ -52,3 +52,74 @@ rawData2
 
 rawData3 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/보행자보호의무위반.csv')
 rawData3
+
+rawData3 = rawData3.drop(columns=['Unnamed: 0', '2'])
+rawData3
+
+rawData3['0'] = '보행자보호위반_사고', '보행자보호위반_사망', '보행자보호위반_부상'
+rawData3
+
+
+
+rawData4 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/부당한회전.csv')
+rawData4
+
+rawData4 = rawData4.drop(columns=['Unnamed: 0', '2'])
+rawData4
+
+rawData4['0'] = '부당한회전_사고', '부당한회전_사망', '부당한회전_부상'
+rawData4
+
+
+
+rawData5 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/신호위반.csv')
+rawData5
+
+rawData5 = rawData5.drop(columns=['Unnamed: 0', '2'])
+rawData5
+
+rawData5['0'] = '신호위반_사고', '신호위반_사망', '신호위반_부상'
+rawData5
+
+
+
+rawData6 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/안전운전의무불이행.csv')
+rawData6
+
+rawData6 = rawData6.drop(columns=['Unnamed: 0', '2'])
+rawData6
+
+rawData6['0'] = '안전운전불이행_사고', '안전운전불이행_사망', '안전운전불이행_부상'
+rawData6
+
+
+
+rawData7 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/중앙선침범.csv')
+rawData7
+
+rawData7 = rawData7.drop(columns=['Unnamed: 0', '2'])
+rawData7
+
+rawData7['0'] = '중앙선침범_사고', '중앙선침범_사망', '중앙선침범_부상'
+rawData7
+
+rawData = pd.merge(rawData, rawData1, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData2, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData3, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData4, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData5, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData6, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData7, left_index = True, right_index=True)
+rawData
