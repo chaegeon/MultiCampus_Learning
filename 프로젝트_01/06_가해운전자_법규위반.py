@@ -175,3 +175,13 @@ lab
 
 lab = lab.values.tolist()
 lab
+
+# 시각화
+
+plt.figure(figsize=(20,10))
+#explode : array-like, default None
+wedgeprops = {'width':0.7, 'edgecolor':'w', 'linewidth':1}
+explodes =(0.1 ,0,0,0,0,0,0,0)
+plt.pie(accident, labels = rawData['위반유형'] ,autopct='%.1f%%',startangle=150, counterclock=False, wedgeprops=wedgeprops, explode=explodes)
+plt.title('노인보행사고 중 가해운전자 법규위반 비율')
+plt.show()
