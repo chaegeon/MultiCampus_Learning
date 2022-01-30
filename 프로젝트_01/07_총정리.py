@@ -64,6 +64,8 @@ plt.show()
 - 노인보행자 보호 대책이 시급하다
 
 
+
+
 # 서울시 노인 교통사고 현황
 
 accident = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/서울시 노인 교통사고 현황.csv')
@@ -126,3 +128,17 @@ death
 
 injury = rawData['노인보행자_부상자수'].values.tolist()
 injury
+
+# 지역별 부상자
+plt.figure(figsize=(20,5))
+n_data = len(region)
+index = np.arange(len(region))
+plt.bar(region,injury)
+plt.show()
+
+# 지역별 사망자
+plt.figure(figsize=(20,5))
+n_data = len(region)
+index = np.arange(len(region))
+plt.bar(region,death, color='r')
+plt.show()
