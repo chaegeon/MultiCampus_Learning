@@ -232,3 +232,15 @@ side
 edge
 
 etc
+
+action = pd.merge(cross, road, left_index = True, right_index=True)
+action
+
+action = pd.merge(action,side, left_index = True, right_index=True)
+action
+
+action = pd.merge(action, edge, left_index = True, right_index=True)
+action
+
+action = pd.merge(action, etc, left_index = True, right_index=True)
+action
