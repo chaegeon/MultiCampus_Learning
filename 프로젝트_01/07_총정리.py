@@ -168,3 +168,33 @@ plt.title('노인보행사고_사상자수')
 plt.show()
 
 - 지역별로 사상자(부상자+사망자)의 차이가 크다
+
+
+
+# 사고발생 상황유형(보행자 행동별)
+
+cross = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/횡단중.csv')
+cross
+# 2020년 만 65세 이상의 노인 차대사람 사고 상황 유형
+# 차대사람 데이터의 사상자는 보행자+차로 카운트되기 때문에
+# 다른 데이터들과 비교해봤을 때 부상자가 12명이 더 많음. 차측 부상자인 듯
+# 사고건수 - 사망자만 비교해봐야 할 듯
+
+# 출처: TAAS 교통사고분석시스템(http://taas.koroad.or.kr/)
+
+cross = cross.drop(columns=['Unnamed: 0', '2'])
+
+cross['0'] = '횡단중_사고건수', '횡단중_사망자수', '횡단중_부상자수'
+cross
+
+road = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/차도통행중.csv')
+road
+
+road = road.drop(columns= ['Unnamed: 0', '2'])
+road
+
+road['0'] = '차도통행중_사고건수', '차도통행중_사망자수', '차도통행중_부상자수'
+road
+
+side = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/보도통행중.csv')
+side
