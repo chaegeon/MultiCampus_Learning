@@ -198,3 +198,37 @@ road
 
 side = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/보도통행중.csv')
 side
+
+side = side.drop(columns= ['Unnamed: 0', '2'])
+side
+
+side['0'] = '보도통행중_사고건수', '보도통행중_사망자수', '보도통행중_부상자수'
+side
+
+edge = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/길가장자리구역통행중.csv')
+edge
+
+edge = edge.drop(columns= ['Unnamed: 0', '2'])
+edge
+
+edge['0'] = '길가장자리통행중_사고건수', '길가장자리통행중_사망자수', '길가장자리통행중_부상자수'
+edge
+
+etc = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/사고유형 기타.csv')
+etc
+
+etc = etc.drop(columns= ['Unnamed: 0', '2'])
+etc
+
+etc['0'] = '기타_사고건수', '기타_사망자수', '기타_부상자수'
+etc
+
+cross
+
+road
+
+side
+
+edge
+
+etc
