@@ -281,3 +281,36 @@ death
 injury = action['부상자수'].values.tolist()
 injury
 
+## 시각화 및 결론
+
+fig = plt.figure(figsize=(8,8))
+fig.set_facecolor('white')
+ax1 = fig.add_subplot()
+plt.ylim([0, 900])
+
+xtick_label_position = list(range(len(a_type))) 
+ax1.set_xticks(xtick_label_position) 
+ax1.set_xticklabels(a_type) 
+a_bar = ax1.bar(xtick_label_position, num, color='c', label = '노인보행사고 발생건수')
+plt.xlabel('보행자 행동유형')
+ax1.set_ylabel('노인보행자 사고발생건수')
+for i in range( len(a_type)):
+  plt.text( i-0.07, num[i]-20, f'{num[i]}', size = 14)
+plt.legend(loc='best')
+
+
+ax2 = ax1.twinx() 
+d_plot = ax2.plot(xtick_label_position, death, color='r', linestyle='--', marker='o', label = '사망자 수')
+ax2.tick_params(axis='y', labelcolor='r')
+ax2.set_ylabel('사망자 수')
+for i in range( len(a_type)):
+  plt.text( i-0.25, death[i]-0.1, f'{death[i]}', size = 14, color='r')
+plt.legend(loc=(0.81,0.9))
+
+plt.title('보행자 행동유형별 사고발생건수와 사망자', fontsize=20)
+plt.show()
+
+- 횡단중일 때 발생한 사고건수가 2번째로 많고 사망자는 제일 많다
+  - 신호등의 필요성이나 신호등 시간을 늘리거나 횡단쉼터설치 등의 대책방안을 생각해 볼 수 있음
+- 차도통행이나 길가장자리 통행 사고도 많은데 이에 대한 해결방안은? 
+  - 보도울타리, 중앙분리대 등
