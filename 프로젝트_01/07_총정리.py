@@ -359,3 +359,9 @@ rawData
 
 rawData['총부상신고자수'] = rawData['65~70세_부상신고자수'] + rawData['71세이상_부상신고자수']
 rawData
+
+rawData = rawData[['총사망자수', '총중상자수', '총경상자수', '총부상신고자수']]
+rawData
+
+lab = rawData.columns
+lab
