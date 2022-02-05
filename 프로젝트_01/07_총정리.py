@@ -365,3 +365,23 @@ rawData
 
 lab = rawData.columns
 lab
+
+## 시각화 및 결론
+
+plt.figure(figsize=(7,7))
+wedgeprops = {'width':0.7, 'edgecolor':'w', 'linewidth':5}
+plt.pie(rawData, labels = lab, autopct='%.1f%%',startangle=150, counterclock=False, wedgeprops=wedgeprops, colors = ['#1c9099','#1c9099','#a6bddb','#a6bddb'])
+plt.show()
+
+- 2020년 서울시 기준, 보행 중 교통사고를 당한 노인의 총 사상자는 1826명
+- 보행 중 교통사고를 당한 노인들의 부상정도는 3주 이상의 치료를 요하는 중상이 절반 이상이다.
+- 사망자수와 합하면 56%정도로 교통사고로 인한 노인 보행자의 부상정도가 심각하다고 볼 수 있다
+
+- 문제제기 부분?
+
+
+- 사상자: 사망자+부상자
+- 사망: 사고 발생시로부터 30일이내에 사망한 경우
+- 중상: 3주 이상의 치료를 요하는 부상
+- 경상: 5일 이상 3주 미만의 치료를 요하는 부상
+- 부상신고: 5일 미만의 치료를 요하는 부상
