@@ -410,3 +410,20 @@ rawData = rawData.T
 rawData
 
 rawData.index
+
+rawData .columns
+
+seoul = rawData.loc[['0', '1']]
+
+seoul
+
+seoul = seoul.drop(columns = [0])
+
+seoul = seoul.drop(columns = [1])
+
+seoul = seoul.T
+seoul
+
+seoul.index = ['0','1','2','3','4','5','6','7','8','9','10','11','12']
+
+seoul
