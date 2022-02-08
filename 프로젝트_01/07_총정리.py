@@ -427,3 +427,21 @@ seoul
 seoul.index = ['0','1','2','3','4','5','6','7','8','9','10','11','12']
 
 seoul
+
+seoul = seoul.astype({'1':int})
+
+seoul.info()
+
+seoul
+
+seoul = seoul.drop(index=['0'])
+
+seoul
+
+time = seoul['0'].values.tolist()
+time
+
+accident = seoul['1'].values.tolist()
+accident
+
+seoul
