@@ -445,3 +445,13 @@ accident = seoul['1'].values.tolist()
 accident
 
 seoul
+
+# 내림차순으로 정렬
+seoul_sort = seoul.sort_values('1',ascending=False)
+seoul_sort
+
+time_s = seoul_sort['0'].values.tolist()
+time_s
+
+accident_s = seoul_sort['1'].values.tolist()
+accident_s
