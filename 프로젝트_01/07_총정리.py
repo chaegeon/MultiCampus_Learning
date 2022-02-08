@@ -455,3 +455,29 @@ time_s
 
 accident_s = seoul_sort['1'].values.tolist()
 accident_s
+
+### 시간대별 시각화 및 결론
+
+plt.figure(figsize=(23,5))
+n_data = len(time_s)
+index = np.arange(len(time_s))
+plt.bar(time_s, accident_s)
+plt.grid(True, alpha = 0.5, axis = 'y')
+plt.ylim([0, 300])
+plt.legend()
+plt.title('시간대별 사고발생건수')
+
+for i in range( len(time_s)):
+  plt.text( i-0.1, accident_s[i]+5, f'{accident_s[i]}', size =14)
+
+
+plt.rc('xtick', labelsize=15)   
+plt.rc('ytick', labelsize=20)  
+
+
+plt.show()
+
+- 점심시간 전후부터 퇴근시간전까지의 시간대에 사고가 가장 많이 발생
+- 의외로 그 다음은 저녁시간대 보다 오전 8시~10시
+- 오후 8시~10시부터 절반수준으로 내려감 
+- 어두운 시간보다는 밝은 시간에 사고가 더 많이 일어남
