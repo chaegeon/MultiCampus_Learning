@@ -530,3 +530,22 @@ day_s
 
 accident_s = seoul_sort['1'].values.tolist()
 accident_s
+
+### 요일별 시각화 및 결론
+
+plt.figure(figsize=(15,5))
+n_data = len(day_s)
+index = np.arange(len(day_s))
+plt.bar(day_s, accident_s)
+plt.grid(True, alpha = 0.5, axis = 'y')
+plt.ylim([0, 375])
+plt.legend()
+plt.title('요일별 사고발생건수')
+
+for i in range( len(day_s)):
+  plt.text( i-0.1, accident_s[i]+3, f'{accident_s[i]}', size =14)
+
+
+plt.show()
+
+- 별 상관 없는 것 같다..
