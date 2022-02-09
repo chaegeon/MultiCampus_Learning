@@ -548,4 +548,4 @@ for i in range( len(day_s)):
 
 plt.show()
 
-- 별 상관 없는 것 같다..
+- 별 상관 없는 것 같다.. 
