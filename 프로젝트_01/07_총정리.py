@@ -481,3 +481,52 @@ plt.show()
 - 의외로 그 다음은 저녁시간대 보다 오전 8시~10시
 - 오후 8시~10시부터 절반수준으로 내려감 
 - 어두운 시간보다는 밝은 시간에 사고가 더 많이 일어남
+
+
+
+## 요일별
+
+rawData = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/day_a.csv')
+rawData
+
+# 출처: TAAS 교통사고분석시스템(http://taas.koroad.or.kr/)
+
+rawData = rawData.T
+rawData
+
+rawData.index
+
+rawData .columns
+
+seoul = rawData.loc[['0', '1']]
+seoul
+
+seoul = seoul.drop(columns = [0, 1])
+
+seoul = seoul.T
+seoul
+
+seoul.index = ['0','1','2','3','4','5','6']
+seoul
+
+seoul = seoul.astype({'1':int})
+
+seoul.info()
+
+day = seoul['0'].values.tolist()
+day
+
+accident = seoul['1'].values.tolist()
+accident
+
+seoul
+
+# 내림차순으로 정렬
+seoul_sort = seoul.sort_values('1',ascending=False)
+seoul_sort
+
+day_s = seoul_sort['0'].values.tolist()
+day_s
+
+accident_s = seoul_sort['1'].values.tolist()
+accident_s
