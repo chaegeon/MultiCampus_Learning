@@ -549,3 +549,17 @@ for i in range( len(day_s)):
 plt.show()
 
 - 별 상관 없는 것 같다.. 
+
+
+
+## 월별
+
+- 겨울에는 노인들의 몸이 굳어 사고가 더 많이 발생하지 않을까? 하는 가설에서 진행해보았다
+
+rawData = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/month_a.csv')
+rawData
+
+# 출처: TAAS 교통사고분석시스템(http://taas.koroad.or.kr/)
+
+rawData = rawData.T
+rawData
