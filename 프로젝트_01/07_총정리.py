@@ -603,3 +603,27 @@ month_s
 
 accident_s = seoul_sort['1'].values.tolist()
 accident_s
+
+### 월별 시각화 및 결론
+
+plt.figure(figsize=(23,5))
+n_data = len(month_s)
+index = np.arange(len(month_s))
+plt.bar(month_s, accident_s)
+plt.grid(True, alpha = 0.5, axis = 'y')
+plt.ylim([0, 225])
+plt.legend()
+plt.title('월별 사고발생건수')
+
+for i in range( len(month_s)):
+  plt.text( i-0.1, accident_s[i]+2.3, f'{accident_s[i]}', size =14)
+
+
+plt.rc('xtick', labelsize=20)   
+plt.rc('ytick', labelsize=20)  
+
+
+plt.show()
+
+- 1, 10, 11월은 가장 많이 사고가 일어나지만 12월은 적다
+- 다른 월과의 차이도 크지 않은 걸 보면 계절과는 상관없는 듯 하다
