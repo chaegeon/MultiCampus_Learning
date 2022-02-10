@@ -623,7 +623,7 @@ plt.rc('xtick', labelsize=20)
 plt.rc('ytick', labelsize=20)  
 
 
-plt.show() 
+plt.show()
 
 - 1, 10, 11월은 가장 많이 사고가 일어나지만 12월은 적다
 - 다른 월과의 차이도 크지 않은 걸 보면 계절과는 상관없는 듯 하다
