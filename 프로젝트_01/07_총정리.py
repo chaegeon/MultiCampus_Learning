@@ -588,3 +588,18 @@ seoul
 
 month = seoul['0'].values.tolist()
 month
+
+accident = seoul['1'].values.tolist()
+accident
+
+seoul
+
+# 내림차순으로 정렬
+seoul_sort = seoul.sort_values('1',ascending=False)
+seoul_sort
+
+month_s = seoul_sort['0'].values.tolist()
+month_s
+
+accident_s = seoul_sort['1'].values.tolist()
+accident_s
