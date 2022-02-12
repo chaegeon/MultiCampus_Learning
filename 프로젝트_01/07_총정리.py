@@ -627,3 +627,17 @@ plt.show()
 
 - 1, 10, 11월은 가장 많이 사고가 일어나지만 12월은 적다
 - 다른 월과의 차이도 크지 않은 걸 보면 계절과는 상관없는 듯 하다
+
+
+
+
+# 가해운전자 법규 위반 유형별
+
+rawData = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/과속.csv')
+rawData
+
+rawData = rawData.drop(columns=['Unnamed: 0', '2'])
+rawData
+
+rawData['0'] = '과속_사고', '과속_사망', '과속_부상'
+rawData
