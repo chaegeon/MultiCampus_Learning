@@ -713,3 +713,16 @@ rawData7
 rawData7['0'] = '중앙선침범_사고', '중앙선침범_사망', '중앙선침범_부상'
 rawData7
 
+
+rawData = pd.merge(rawData, rawData1, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData2, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData3, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData4, left_index = True, right_index=True)
+rawData
+
