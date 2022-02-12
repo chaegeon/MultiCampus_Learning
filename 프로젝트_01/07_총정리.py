@@ -704,3 +704,12 @@ rawData6
 rawData6['0'] = '안전운전불이행_사고', '안전운전불이행_사망', '안전운전불이행_부상'
 rawData6
 
+rawData7 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/중앙선침범.csv')
+rawData7
+
+rawData7 = rawData7.drop(columns=['Unnamed: 0', '2'])
+rawData7
+
+rawData7['0'] = '중앙선침범_사고', '중앙선침범_사망', '중앙선침범_부상'
+rawData7
+
