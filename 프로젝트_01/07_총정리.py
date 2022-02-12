@@ -661,3 +661,22 @@ rawData2
 
 rawData2['0'] = '기타_사고', '기타_사망', '기타_부상'
 rawData2
+
+
+
+rawData3 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/보행자보호의무위반.csv')
+rawData3
+
+rawData3 = rawData3.drop(columns=['Unnamed: 0', '2'])
+rawData3
+
+rawData3['0'] = '보행자보호위반_사고', '보행자보호위반_사망', '보행자보호위반_부상'
+rawData3
+
+
+
+rawData4 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/부당한회전.csv')
+rawData4
+
+rawData4 = rawData4.drop(columns=['Unnamed: 0', '2'])
+rawData4
