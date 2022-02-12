@@ -695,3 +695,12 @@ rawData5
 rawData5['0'] = '신호위반_사고', '신호위반_사망', '신호위반_부상'
 rawData5
 
+rawData6 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/안전운전의무불이행.csv')
+rawData6
+
+rawData6 = rawData6.drop(columns=['Unnamed: 0', '2'])
+rawData6
+
+rawData6['0'] = '안전운전불이행_사고', '안전운전불이행_사망', '안전운전불이행_부상'
+rawData6
+
