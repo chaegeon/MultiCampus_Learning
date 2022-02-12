@@ -680,3 +680,18 @@ rawData4
 
 rawData4 = rawData4.drop(columns=['Unnamed: 0', '2'])
 rawData4
+
+rawData4['0'] = '부당한회전_사고', '부당한회전_사망', '부당한회전_부상'
+rawData4
+
+
+
+rawData5 = pd.read_csv('/content/drive/MyDrive/멀티캠퍼스/실습/Data폴더/신호위반.csv')
+rawData5
+
+rawData5 = rawData5.drop(columns=['Unnamed: 0', '2'])
+rawData5
+
+rawData5['0'] = '신호위반_사고', '신호위반_사망', '신호위반_부상'
+rawData5
+
