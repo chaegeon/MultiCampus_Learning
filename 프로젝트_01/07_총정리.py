@@ -726,3 +726,14 @@ rawData
 rawData = pd.merge(rawData, rawData4, left_index = True, right_index=True)
 rawData
 
+rawData = pd.merge(rawData, rawData5, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData6, left_index = True, right_index=True)
+rawData
+
+rawData = pd.merge(rawData, rawData7, left_index = True, right_index=True)
+rawData
+
+rawData.columns
+
