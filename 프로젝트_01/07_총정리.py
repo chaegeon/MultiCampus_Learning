@@ -750,3 +750,29 @@ rawData
 
 rawData = rawData.T
 rawData
+
+
+rawData = rawData.sort_values('사고발생건수',ascending=False)
+rawData
+
+rawData = rawData.reset_index()
+rawData
+
+rawData.columns=['위반유형', '사고발생건수', '사망자수', '부상자수']
+rawData
+
+a_type = rawData['위반유형'].values.tolist()
+
+a_type
+
+num = rawData['사고발생건수'].values.tolist()
+num
+
+death = rawData['사망자수'].values.tolist()
+death
+
+injury = rawData['부상자수'].values.tolist()
+injury
+
+accident = rawData.T
+accident
