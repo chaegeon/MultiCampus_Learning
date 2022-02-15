@@ -810,3 +810,43 @@ explodes =(0.1 ,0,0,0,0,0,0,0)
 plt.pie(accident, labels = rawData['위반유형'] ,autopct='%.1f%%',startangle=150, counterclock=False, wedgeprops=wedgeprops, explode=explodes)
 plt.title('노인보행사고 중 가해운전자 법규위반 비율')
 plt.show()
+
+fig = plt.figure(figsize=(8,8))
+fig.set_facecolor('white')
+ax1 = fig.add_subplot()
+# plt.ylim([0, 900])
+
+xtick_label_position = list(range(len(a_type))) 
+ax1.set_xticks(xtick_label_position) 
+ax1.set_xticklabels(a_type) 
+a_bar = ax1.bar(xtick_label_position, num, color='c', label = '사고발생건수')
+#plt.xlabel('가해차량 법규위반 유형')
+ax1.set_ylabel('노인보행자 사고발생건수')
+for i in range( len(a_type)):
+  plt.text( i-0.4, num[i]+20, f'{num[i]}', size = 14)
+plt.legend(loc='best')
+
+
+ax2 = ax1.twinx() 
+d_plot = ax2.plot(xtick_label_position, death, color='r', linestyle='--', marker='o', label = '사망자 수')
+ax2.tick_params(axis='y', labelcolor='r')
+ax2.set_ylabel('사망자 수')
+for i in range( len(a_type)):
+  plt.text( i+0.1, death[i]+0.5, f'{death[i]}', size = 14, color='r')
+plt.legend(loc=(0.81,0.9))
+
+# ax3 = ax1.twinx()
+# i_plot = ax3.plot(xtick_label_position, injury, color='b', linestyle='--', marker='o', label = '부상자 수')
+# ax3.tick_params(axis='y', labelcolor='r')
+# for i in range( len(a_type)):
+#   plt.text( i-0.25, injury[i]-0.1, f'{injury[i]}', size = 14, color='b')
+# plt.legend(loc=(0.81,0.9))
+
+
+plt.title('가해차량 법규위반유형별 사고발생건수와 사망자')
+plt.show()
+
+- 안전운전의무 불이행으로 인한 사고는 전체 사고수 중 87.6%를 차지한다.
+- 또한 그로 인해 사망한 수도 다른 사고에 비해 압도적으로 많다
+- 운전자들의 안전운전의무 인식을 상기시킬 필요가 있다
+- 과속의 경우 사고건수는 적은 편이지만 그에 비해 사망률은 치명적
