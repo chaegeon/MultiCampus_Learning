@@ -776,3 +776,15 @@ injury
 
 accident = rawData.T
 accident
+
+accident.columns = ['안전운전불이행', '신호위반', '중앙선침범', '교차로위반', '기타', '보행자보호위반', '과속', '부당한회전']
+accident
+
+accident = accident.loc[['사고발생건수']]
+accident
+
+lab = rawData['위반유형']
+lab
+
+lab = lab.values.tolist()
+lab
