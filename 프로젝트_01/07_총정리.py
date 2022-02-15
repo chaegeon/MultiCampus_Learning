@@ -788,3 +788,25 @@ lab
 
 lab = lab.values.tolist()
 lab
+
+accident.columns = ['안전운전불이행', '신호위반', '중앙선침범', '교차로위반', '기타', '보행자보호위반', '과속', '부당한회전']
+accident
+
+accident = accident.loc[['사고발생건수']]
+accident
+
+lab = rawData['위반유형']
+lab
+
+lab = lab.values.tolist()
+lab
+
+## 시각화 및 결론
+
+plt.figure(figsize=(20,10))
+#explode : array-like, default None
+wedgeprops = {'width':0.7, 'edgecolor':'w', 'linewidth':1}
+explodes =(0.1 ,0,0,0,0,0,0,0)
+plt.pie(accident, labels = rawData['위반유형'] ,autopct='%.1f%%',startangle=150, counterclock=False, wedgeprops=wedgeprops, explode=explodes)
+plt.title('노인보행사고 중 가해운전자 법규위반 비율')
+plt.show()
