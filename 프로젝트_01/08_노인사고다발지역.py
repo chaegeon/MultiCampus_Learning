@@ -28,3 +28,18 @@ oldman['사망자수'] = pd.to_numeric(oldman['사망자수'])
 oldman['중상자수'] = pd.to_numeric(oldman['중상자수'])
 oldman['경도'] = pd.to_numeric(oldman['경도'])
 oldman['위도'] = pd.to_numeric(oldman['위도'])
+
+## 지역별 사고다발 지점, 발생건수, 사상자수, 사망자수
+
+oldman
+
+# 전체 데이터의 평균, 표준편차, 사분위수, 최소값, 최대값 확인
+oldman.describe()
+
+oldman_set = oldman.set_index(['시도시군구명', '지점명'])
+oldman_set
+
+# 각 지역별 사고다발지점에서의 사고 발생건수 및 사상자수의 합
+oldman_sum = oldman.groupby('시도시군구명').sum()
+oldman_sum = oldman_sum.reset_index()
+oldman_sum
