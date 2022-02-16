@@ -43,3 +43,4 @@ oldman_set
 oldman_sum = oldman.groupby('시도시군구명').sum()
 oldman_sum = oldman_sum.reset_index()
 oldman_sum
+
