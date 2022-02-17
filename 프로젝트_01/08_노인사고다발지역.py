@@ -44,3 +44,19 @@ oldman_sum = oldman.groupby('시도시군구명').sum()
 oldman_sum = oldman_sum.reset_index()
 oldman_sum
 
+### 서울시 전체 데이터와 비교
+
+accident = pd.read_csv('/content/drive/MyDrive/[D9&10] 데이터시각화 프로젝트_5조/Data/2020_노인교통사고현황.csv')
+accident.head()
+
+# 사망자수와 부상자수를 합하여 사상자수 컬럼 생성
+accident['사상자수'] = accident['사망자수']+accident['부상자수']
+accident.head()
+
+# 연산을 위해 '지역'컬럼을 오름차순 정렬 후 reset_index 후 'index' 컬럼 제거
+accident = accident.sort_values('지역').reset_index().drop('index', axis=1)
+accident.head()
+
+# (사고다발지역 사상자수)/(전체 사상자수) -> 사고다발지역의 사상자수가 전체 사상자수에서 차지하는 비율
+oldman_sum['사고다발지역 사상자수 비율'] = round(oldman_sum['사상자수'] / accident['사상자수'] * 100, 2)
+oldman_sum
