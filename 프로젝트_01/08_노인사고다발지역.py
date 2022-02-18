@@ -71,3 +71,9 @@ from matplotlib import font_manager, rcParams
 rcParams['font.family'] = 'NanumGothicCoding'
 rcParams['axes.unicode_minus'] = False
 font_manager._rebuild()
+
+### 지역별 발생건수, 사상자수, 사망자수
+
+oldman.groupby('시도시군구명').sum()['발생건수'].sort_values(ascending=False)
+
+oldman.groupby('시도시군구명').sum()['사상자수'].sort_values(ascending=False)
