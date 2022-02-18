@@ -60,3 +60,14 @@ accident.head()
 # (사고다발지역 사상자수)/(전체 사상자수) -> 사고다발지역의 사상자수가 전체 사상자수에서 차지하는 비율
 oldman_sum['사고다발지역 사상자수 비율'] = round(oldman_sum['사상자수'] / accident['사상자수'] * 100, 2)
 oldman_sum
+
+## 그래프
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from matplotlib import font_manager, rcParams
+!apt-get install fonts-nanum*
+rcParams['font.family'] = 'NanumGothicCoding'
+rcParams['axes.unicode_minus'] = False
+font_manager._rebuild()
