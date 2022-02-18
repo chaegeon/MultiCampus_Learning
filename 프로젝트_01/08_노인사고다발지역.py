@@ -77,3 +77,21 @@ font_manager._rebuild()
 oldman.groupby('시도시군구명').sum()['발생건수'].sort_values(ascending=False)
 
 oldman.groupby('시도시군구명').sum()['사상자수'].sort_values(ascending=False)
+
+### 지역별 사고다발지역 수
+
+# 각 구별 사고다발지역 수 확인
+
+oldman_count = oldman.groupby('시도시군구명').count()
+oldman_count = oldman_count.reset_index()
+oldman_count
+
+plt.figure( figsize=(30,5) )
+sns.barplot(data=oldman_count, x='시도시군구명', y='지점명', ci=False)
+plt.show()
+
+oldman_count['지점명'].sort_values(ascending=False)
+
+# 사고다발지역수 상위 3구
+
+print(oldman['시도시군구명'][24], oldman['시도시군구명'][16], oldman['시도시군구명'][10])
