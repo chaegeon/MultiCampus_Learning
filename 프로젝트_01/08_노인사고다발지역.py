@@ -95,3 +95,13 @@ oldman_count['지점명'].sort_values(ascending=False)
 # 사고다발지역수 상위 3구
 
 print(oldman['시도시군구명'][24], oldman['시도시군구명'][16], oldman['시도시군구명'][10])
+
+
+### 지점별 사고발생건수, 사상자수
+
+oldman.sort_values(['발생건수'], ascending=False)
+
+oldman.sort_values(['사상자수'], ascending=False)
+
+plt.hist(oldman['발생건수'], bins=11)
+plt.show()
