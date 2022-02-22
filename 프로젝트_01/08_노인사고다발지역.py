@@ -105,3 +105,9 @@ oldman.sort_values(['사상자수'], ascending=False)
 
 plt.hist(oldman['발생건수'], bins=11)
 plt.show()
+
+### 사고다발지역 사상자수 비율
+
+plt.figure( figsize=(30,5) )
+sns.barplot(data=oldman_sum, x='시도시군구명', y='사고다발지역 사상자수 비율', ci=False)
+plt.show()
