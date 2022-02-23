@@ -111,3 +111,18 @@ plt.show()
 plt.figure( figsize=(30,5) )
 sns.barplot(data=oldman_sum, x='시도시군구명', y='사고다발지역 사상자수 비율', ci=False)
 plt.show()
+
+## 사고다발지역 지점 지도 시각화
+
+import folium
+
+from folium.plugins import MarkerCluster
+
+location = []
+
+for i in oldman.index:
+  location.append([oldman.loc[i,'위도'], oldman.loc[i,'경도'] ])
+
+map = folium.Map( location = [37.53, 127], zoom_start=12, tiles="cartodbpositron" )
+MarkerCluster( location, overlay=True).add_to(map)
+map
