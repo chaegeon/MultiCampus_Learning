@@ -176,4 +176,4 @@ m
  ### 사고다발지역 + 고령인구비율
 
 population = pd.read_csv('/content/drive/MyDrive/[D9&10] 데이터시각화 프로젝트_5조/Data/2020_고령인구비율.csv', encoding='cp949')
-population
+population 
