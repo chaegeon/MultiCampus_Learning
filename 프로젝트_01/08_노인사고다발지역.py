@@ -207,3 +207,29 @@ plt.scatter(x=population['고령인구비율'], y=oldman_count['지점명'])
 plt.xlabel('지역별 고령인구비율')
 plt.ylabel('지역별 사고다발지점수')
 plt.show()
+
+
+- 산점도를 그려본 결과 지역별 '고령인구비율'과 '사고다발지역 지점수'간에 상관관계는 없는 것으로 보인다.
+
+### 사고다발지역 + 65세이상 인구수
+
+m = folium.Map(location=[37.58, 127.0], tiles="cartodbpositron", zoom_start=11)
+
+# 행정구역별 65세이상 인구수
+#folium.Choropleth(
+#  geo_data = geojson,
+#  data = population,
+#  columns = ['행정구역별', '65세이상인구'],
+#  fill_color='YlOrBr',
+#  key_on = 'properties.SIG_KOR_NM'
+#).add_to(m)
+
+# 사고다발지점(빨간색 원)
+for i in oldman.index :
+    folium.Circle(
+        location = oldman.loc[i, ['위도', '경도']],
+        radius = 100,
+        color = 'red'
+    ).add_to(m)
+
+m
