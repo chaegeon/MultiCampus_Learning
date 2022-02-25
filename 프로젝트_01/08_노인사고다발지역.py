@@ -177,3 +177,33 @@ m
 
 population = pd.read_csv('/content/drive/MyDrive/[D9&10] 데이터시각화 프로젝트_5조/Data/2020_고령인구비율.csv', encoding='cp949')
 population 
+
+import json
+geojson = json.load(open('/content/drive/MyDrive/멀티캠퍼스/seoulsigungu.geojson'))
+
+# 행정구역별 고령인구비율
+
+m = folium.Map(location=[37.58, 127.0], tiles="cartodbpositron", zoom_start=11)
+
+folium.Choropleth(
+  geo_data = geojson,
+  data = population,
+  columns = ['행정구역별', '고령인구비율'],
+  fill_color='YlOrBr',
+  key_on = 'properties.SIG_KOR_NM'
+).add_to(m)
+
+# 사고다발지점(빨간색 원)
+for i in oldman.index :
+    folium.Circle(
+        location = oldman.loc[i, ['위도', '경도']],
+        radius = 100,
+        color = 'red'
+    ).add_to(m)
+
+m
+
+plt.scatter(x=population['고령인구비율'], y=oldman_count['지점명'])
+plt.xlabel('지역별 고령인구비율')
+plt.ylabel('지역별 사고다발지점수')
+plt.show()
