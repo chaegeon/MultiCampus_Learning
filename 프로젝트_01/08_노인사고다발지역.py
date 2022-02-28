@@ -263,3 +263,17 @@ plt.show()
 
 variable = pd.read_csv('/content/drive/MyDrive/[D9&10] 데이터시각화 프로젝트_5조/Data/variable.csv')
 variable
+
+variable.describe()
+
+round(pd.DataFrame(variable.describe().loc['mean']).T, 2)
+
+round(pd.DataFrame(variable[variable['발생건수'] > 4.98].describe().loc['mean']).T, 2)
+
+variable[variable['발생건수'] < 4.98].mean()
+
+round(pd.DataFrame(variable[variable['발생건수'] < 4.98].describe().loc['mean']).T, 2)
+
+- 발생건수가 평균발생건수(4.98)보다 높은 지점의 경우 평균발생건수보다 낮은 지점에 비해 사고다발지점에 시장이 위치해있는 경우가 상대적으로 더 많음.
+
+variable[variable['발생건수'] < 4.98].describe()
