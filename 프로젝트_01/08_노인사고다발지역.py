@@ -286,3 +286,16 @@ print('시장과 교차로가 함께 있는 지점의 수:', variable['시장'][
 
 - 인근에 시장이 있는 사고지점에 교차로가 있는 경우 전체에서 약 78.95%의 비율을 차지하며, 노인 유동인구가 많을 것으로 추정되는 지점에 교통량 또한 많을 것으로 예상.
  - 노인 유동인구가 많은 지점에서 노인보행자 보호를 위한 대책이 필요
+
+
+ #### 다중,,회귀분석,,
+- 이건 그냥 재미로 돌려본거라 재미로 보시고 ppt엔 넣지 마세요,,
+
+import statsmodels.api as sm
+
+x_variable = variable[['교차로', '시장', '무신호횡단로', '병원']]
+
+y = variable['발생건수']
+
+multi_model = sm.OLS(y, x_variable)
+fitted_multi_model = multi_model.fit()
