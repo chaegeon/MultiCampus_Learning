@@ -316,3 +316,16 @@ vif
 - 왜도(Skew), 첨도(Kurtosis)도 정규성을 만족..
 - 심지어 VIF도 전부 10 이하.. 다중공선성도 없다고?
 - ㅋㅋㅋ웃긴다..
+
+## 도로폭
+
+road = pd.read_csv('/content/drive/MyDrive/[D9&10] 데이터시각화 프로젝트_5조/Data/road.csv')
+
+road.head()
+
+# 불필요한 컬럼 제거
+road.drop(['Unnamed: 0', '시군구코드', 'CCTV설치여부', 'CCTV설치대수','제한속도'], axis=1, inplace=True)
+
+road.head()
+
+road.info()
