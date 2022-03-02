@@ -299,3 +299,20 @@ y = variable['발생건수']
 
 multi_model = sm.OLS(y, x_variable)
 fitted_multi_model = multi_model.fit()
+
+
+fitted_multi_model.summary()
+
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+vif = pd.DataFrame()
+vif['VIF'] = [variance_inflation_factor(x_variable.values, i) for i in range(x_variable.shape[1])]
+vif['variable'] = x_variable.columns
+vif
+
+- 회귀분석 돌렸더니 모든 변수의 p-value값이 0.05이하다..! 감히 각 변수가 발생건수에 유의미한 영향을 준다고 봐도 되는건지ㅋㅋ
+- 수정된 결정계수도 무려 0.762이다. 
+- Prob(omnibus)도 유의수준인 0.05를 훨씬 웃도는 수치라 잔차항이 정규분포를 따른다고 볼 수 있다.
+- 왜도(Skew), 첨도(Kurtosis)도 정규성을 만족..
+- 심지어 VIF도 전부 10 이하.. 다중공선성도 없다고?
+- ㅋㅋㅋ웃긴다..
