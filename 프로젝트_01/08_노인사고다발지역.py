@@ -329,3 +329,35 @@ road.drop(['Unnamed: 0', '시군구코드', 'CCTV설치여부', 'CCTV설치대�
 road.head()
 
 road.info()
+
+road.describe()
+
+# 도로폭이 평균 이상인 지점
+road[road['보호구역도로폭'] > 10.26]
+
+m = folium.Map(location=[37.58, 127.0], tiles="cartodbpositron", zoom_start=11)
+
+# 지도에 사고다발지점 표시(빨간색 원, 반경 200미터)
+for i in oldman.index :
+    folium.Circle(
+        location = oldman.loc[i, ['위도', '경도']],
+        radius = 200,
+        color = 'red'
+    ).add_to(m)
+
+# 지도에 노인보호구역 표시(파란색 원, 반경 300미터)
+for i in silverzone.index :
+    folium.Circle(
+        location = silverzone.loc[i, ['위도', '경도']],
+        radius = 300,
+        color = 'dodgerblue'
+    ).add_to(m)
+
+# 지도에 도로 표시(노란색원)
+for i in road.index :
+    folium.Circle(
+        location = road.loc[i, ['위도', '경도']],
+        radius = 100,
+        color = 'yellow'
+    ).add_to(m)
+m
