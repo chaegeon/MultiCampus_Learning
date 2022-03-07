@@ -1,3 +1,5 @@
+# 아마 코스피 위주였던 듯
+
 import pandas as pd
 import numpy as np
 import pymysql
