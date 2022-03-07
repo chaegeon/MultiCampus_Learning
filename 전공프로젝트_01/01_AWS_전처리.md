@@ -1,4 +1,4 @@
-# 아마 코스피 위주였던 듯
+# 흐림데이터 전처리하던 과정
 
 import pandas as pd
 import numpy as np
