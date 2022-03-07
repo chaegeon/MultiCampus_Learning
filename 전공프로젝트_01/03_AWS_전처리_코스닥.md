@@ -155,24 +155,3 @@ ax.axes.yaxis.set_ticks([])
 
 kosdaq.groupby(['Sky_condition'])['kosdaq'].mean()
 
-####################################################################################################################################
-
-kosdaq.groupby(['Sky_condition'])['kosdaq_net_change'].mean()
-
-kosdaq.groupby(['Sky_condition'])['kosdaq_fluctuation'].mean()
-
-####################################################################################################################################
-
-kosdaq.groupby(['Sky_condition'])['volume_kosdaq'].mean()
-
-kosdaq.groupby(['Sky_condition'])['vol_net_change'].mean()
-
-kosdaq.groupby(['Sky_condition'])['vol_fluctuation'].mean()
-
-kosdaq.groupby(['Sky_condition'])['amount_kosdaq'].mean()
-
-kosdaq.groupby(['Sky_condition'])['amt_net_change'].mean()
-
-kosdaq.groupby(['Sky_condition'])['amt_fluctuation'].mean()
-
-pd.DataFrame(kosdaq).to_csv('kosdaq.csv')
