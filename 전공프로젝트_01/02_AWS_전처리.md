@@ -1,3 +1,5 @@
+# 아마 코스피 위주일거임
+
 import pandas as pd
 import numpy as np
 import pymysql
