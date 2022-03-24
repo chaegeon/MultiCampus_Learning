@@ -129,14 +129,19 @@ cloudiness_stock
 
 ################################################################################################################################
 
-# engine = create_engine("mysql+mysqldb://st02:st02@localhost:3306/cloudy?charset=utf8", encoding='utf-8')
-# cloudiness_stock.to_sql(name='흐림과_주식_20010101_20211231', con=engine, index=False, if_exists='fail')
+`engine = create_engine("mysql+mysqldb://st02:st02@localhost:3306/cloudy?charset=utf8", encoding='utf-8')`
 
-# 5181개의 행 중,
-# 맑음 1696
-# 구름조금 1457
-# 구름많음 1350
-# 흐림 678
+`cloudiness_stock.to_sql(name='흐림과_주식_20010101_20211231', con=engine, index=False, if_exists='fail')`
+
+5181개의 행 중,
+
+맑음 1696
+
+구름조금 1457
+
+구름많음 1350
+
+흐림 678
 
 
 
