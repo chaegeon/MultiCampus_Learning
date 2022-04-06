@@ -98,3 +98,8 @@
 - <img src="C:\Users\chgeo\AppData\Roaming\Typora\typora-user-images\image-20220211002247706.png" alt="image-20220211002247706" style="zoom:50%;" />
   - 2개로 쪼갤 때엔 Traning/Test
   - 3개로 쪼갤 떄엔 Trainig/Test/Validation
+
+1. 훈련데이터 (Training data)
+
+    - 모델의 **학습**을 위해 사용되는 자료. X를 가지고 Y를 찾는, 즉 f()를 찾는데 쓰이는 데이터
+2.
