@@ -140,3 +140,8 @@
 #### K-fold 교차검증(Cross-validation, CV) 방식 
 
 - 자료의 수가 충분하지 않은 경우에는 훈련데이터에서 너무 많은 양의 데이터를 검증 또는 평가 데이터에 뺏기지 않도록 **교차검정기법**을 사용
+
+- ![image-20220211003544432](C:\Users\chgeo\AppData\Roaming\Typora\typora-user-images\image-20220211003544432.png)
+
+- 네모가 전체데이터. 3-fold CV를 적용(보통 5, 10을 많이 사용함)
+- 랜덤하게 3덩어리로 쪼갬
