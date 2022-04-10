@@ -170,3 +170,13 @@
 ## 편향-분산 트레이드 오프(Bias-Variance Trade off)
 
 - 모델의 복잡한 정도에 따라 훈련 데이터와 평가 데이터의 **예측오차**(일반화오차. Test Error rate)는 일반적으로 다음과 같은 패턴을 보이게 됨
+
+- ![image-20220211011137973](C:\Users\chgeo\AppData\Roaming\Typora\typora-user-images\image-20220211011137973.png)
+- 그림은 Test의 오차로 평가했음( Predictiond Error)
+- 정확도의 반대개념. 오차가 높으면 안 좋은 거지
+- Test 오차는 일반화 오차로 볼 수 있는데 낮을 수록 좋은거지
+- 그런데 얘는 모델의 Complexity에 의존을 함
+- 모델을 아주 단순한 모델을 쓰면 ( 선형모델 같은) 과소적합
+- 복잡한 모델을 쓰면 ( 예를 들면 굴곡이 심한 회귀모형 같은) 과대적합
+- 모델이 단순하면 Traning Data Training Sample로 fitting했을 때의 Error rate 이 오차가 노란색 선으로 표현
+- 단순한 모델은 피팅을 잘 못해서 오차가 큼
