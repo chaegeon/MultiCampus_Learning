@@ -8,11 +8,13 @@
 
 ### 프로젝트 초기화 진행
 
-- 폴더를 리포로 
+(Git Bash에서 mkdir로 폴더 하나 만들고 시작했음)
+
+- **폴더를 리포로 **
 
   $ git init
 
-- README 파일 & .gitignire 파일 생성 
+- README 파일 & .gitignire 파일 생성 (VS Code에서)
 
   - 빈폴더에서는 add 가 안 돼서 파일을 하나 만들어야 함 (?) -> README.md 생성
 
@@ -35,6 +37,8 @@
 - 서명이 정상적으로 등록되었는지 확인
 
   $ cat ~/.gitconfig
+
+  (전에 해뒀던 게 있어서 이걸로 확인해보고 있으면 패스)
 
 - commit
 
